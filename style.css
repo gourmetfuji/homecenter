@@ -1,0 +1,543 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  font-family: "Yu Mincho", "YuMincho", "游明朝体", "游明朝", serif;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0px;
+}
+
+p {
+  margin: 0;
+  font-family: "Yu Mincho", "YuMincho", "游明朝体", "游明朝", serif;
+}
+
+a:visited {
+  color: black;
+}
+
+.hamburger {
+  display: none;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+/* ネストにせず、外に出して指定します */
+.header-wrapper .header-logo img {
+  width: 300px;
+}
+
+.connected-nav {
+  --cut: 10px; /* 左右の斜め部分の幅 */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 六角形の外枠 */
+.connected-nav a {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 60px;
+  height: 46px;
+
+  /* 斜め部分に文字が重ならないようにする */
+  padding: 0 calc(var(--cut) + 10px);
+
+  /* 外側の縁の色 */
+  background: #e8e2d7;
+
+  clip-path: polygon(
+    var(--cut) 0,
+    calc(100% - var(--cut)) 0,
+    100% 50%,
+    calc(100% - var(--cut)) 100%,
+    var(--cut) 100%,
+    0 50%
+  );
+
+  filter: none;
+
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+/* 隣同士を重ねる */
+.connected-nav a + a {
+  margin-left: -5px;
+}
+
+main {
+  width: 100%;
+  margin: auto;
+}
+
+/* メインビジュアル*/
+#main-visual {
+  width: 100%;
+}
+#main-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* メインビジュアル以外*/
+.contents {
+  width: 80%;
+  margin: auto;
+}
+
+#news,
+#about,
+#tool,
+#cafe,
+#bgm,
+#hotel,
+#access {
+  position: relative;
+  isolation: isolate;
+  margin-top: 120px;
+  padding: 40px 80px;
+}
+
+#news > *,
+#about > *,
+#tool > *,
+#cafe > *,
+#bgm > *,
+#hotel > *,
+#access > * {
+  position: relative;
+  z-index: 1;
+}
+
+#news::before,
+#about::before,
+#tool::before,
+#cafe::before,
+#bgm::before,
+#hotel::before,
+#access::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #f4efe3;
+
+  clip-path: polygon(6% 0, 94% 0, 100% 50%, 94% 100%, 6% 100%, 0 50%);
+
+  z-index: 0;
+}
+
+/* h2とナビボタンに共通するフォント */
+#news h2,
+#about h2,
+#tool h2,
+#cafe h2,
+#bgm h2,
+#hotel h2,
+#access h2,
+.connected-nav a {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+}
+
+/* 各コンテンツのレイアウト */
+.about-content,
+.tool-content,
+.cafe-content,
+.bgm-content,
+.hotel-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.tool-content,
+.bgm-content {
+  flex-direction: row-reverse;
+}
+
+.about-image,
+.tool-image,
+.cafe-image,
+.bgm-image,
+.hotel-image {
+  width: 50%;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.about-image img,
+.tool-image img,
+.cafe-image img,
+.bgm-image img,
+.hotel-image img {
+  width: 100%;
+  display: block;
+}
+
+.about-text,
+.tool-text,
+.cafe-text,
+.bgm-text,
+.hotel-text {
+  width: 50%;
+  line-height: 2;
+  box-sizing: border-box;
+}
+
+/* h2だけに適用する設定 */
+#news h2,
+#about h2,
+#tool h2,
+#cafe h2,
+#bgm h2,
+#hotel h2,
+#access h2 {
+  position: absolute;
+  top: -50px;
+  font-size: 30px;
+  color: #3f6f82;
+}
+
+/* マップの器を写真エリアと同じ「幅50%」にする */
+#map {
+  width: 50%;
+  overflow: hidden;
+  padding: 10px;
+  aspect-ratio: 4 / 3;
+  box-sizing: border-box;
+}
+
+/* 中のマップ本体を器いっぱいに広げる */
+#map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.access-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.access-text {
+  width: 50%;
+  line-height: 2;
+  box-sizing: border-box;
+}
+
+/* 住所などの行間を少し調整 */
+.access-text p {
+  margin-bottom: 8px;
+}
+
+/* ★全角スペースの代わりに、CSSで「上の余白（空白行）」を作る */
+.info-list {
+  margin-top: 30px;
+}
+
+/* 営業時間・定休日・TELの1行ごとの設定 */
+.info-row {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+/* 左側の「営業時間」「定休日」などのラベル幅を固定する */
+.info-row .label {
+  width: 90px;
+  flex-shrink: 0;
+}
+
+/* 右側の値の設定 */
+.info-row .value {
+  flex-grow: 1;
+}
+
+/* フッター（ネストを解消して安全に書き直しました） */
+.footer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.footer-wrapper .footer-logo img {
+  width: 300px;
+}
+
+.icon {
+  font-size: 40px;
+  padding: 30px 0px;
+}
+
+.icon-nav {
+  text-align: right;
+}
+
+.copyright {
+  margin-top: 20px;
+  text-align: center;
+  font-size: small;
+}
+
+/* ====================================================
+   📱 スマートフォン版のスタイル設定 (480px以下)
+   ==================================================== */
+@media screen and (max-width: 480px) {
+  /* 画面全体の右側へのはみ出し・横スクロールを完全に防止 */
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* コンテンツ全体を包む大枠 */
+  .contents {
+    width: 100% !important;
+    padding: 0 15px !important; /* 左右に適切な余白を確保 */
+    margin: 0 auto !important;
+    box-sizing: border-box;
+  }
+
+  /* ヘッダー全体を中央寄せに */
+  .header-wrapper {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 15px;
+    margin: 10px 0;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* ハンバーガーメニュー */
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    margin: 0 auto !important;
+  }
+
+  .hamburger span {
+    width: 30px;
+    height: 2px;
+    background: #3f6f82;
+    transition: all 0.3s ease;
+  }
+
+  /* JSで .active がついた時のハンバーガーの見た目変化（×印などにする場合） */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* スマホナビゲーションの動作 */
+  .header-nav {
+    display: none !important; /* 通常時は非表示 */
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    box-sizing: border-box;
+  }
+
+  /* JSで .active がついた時に表示 */
+  .header-nav.active {
+    display: flex !important;
+    margin-top: 20px;
+  }
+
+  .header-nav a {
+    margin: 10px 0 !important;
+    text-align: center;
+  }
+
+  /* 各セクションの余白調整 */
+  #news,
+  #about,
+  #tool,
+  #cafe,
+  #bgm,
+  #hotel,
+  #access {
+    padding: 40px 15px !important;
+    margin-top: 60px !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  #news::before,
+  #about::before,
+  #tool::before,
+  #cafe::before,
+  #bgm::before,
+  #hotel::before,
+  #access::before {
+    clip-path: none !important; /* スマホでは六角形背景などを解除して四角にする */
+    border-radius: 8px;
+  }
+
+  /* 各セクションのコンテンツ（写真と文字）を縦並びに */
+  .about-content,
+  .tool-content,
+  .cafe-content,
+  .bgm-content,
+  .hotel-content,
+  .access-content {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* 各要素を100%幅にし、中央に揃える */
+  .about-image,
+  .about-text,
+  .tool-image,
+  .tool-text,
+  .cafe-image,
+  .cafe-text,
+  .bgm-image,
+  .bgm-text,
+  .hotel-image,
+  .hotel-text,
+  #map,
+  .access-text {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    text-align: left;
+    box-sizing: border-box;
+  }
+
+  /* スマホ用マップのサイズ・比率調整 */
+  #map {
+    aspect-ratio: 16 / 9 !important;
+    height: auto !important;
+  }
+
+  /* メインビジュアルのスライド調整 */
+  .splide__slide {
+    width: 100% !important;
+  }
+  .splide__slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ====================================================
+     🚨 フッターの右寄りはみ出しを完全に解決するスタイル
+     ==================================================== */
+  footer {
+    width: 100% !important;
+    padding: 40px 20px !important;
+    box-sizing: border-box;
+  }
+
+  .footer-wrapper {
+    display: flex !important;
+    flex-direction: column !important; /* 縦並びにする */
+    align-items: center !important; /* 中央揃え */
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    gap: 30px !important;
+    box-sizing: border-box;
+  }
+
+  /* ロゴエリアの中央揃え */
+  .footer-logo {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+  }
+
+  .footer-logo a {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .footer-logo p {
+    text-align: center !important;
+    margin: 5px 0 !important;
+    width: 100% !important;
+  }
+
+  /* SNSアイコンとフッターナビを囲む枠 */
+  .icon-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+  }
+
+  /* SNSアイコンエリア */
+  .icon {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+  }
+
+  /* フッター内のナビゲーションを縦並びにしてはみ出しを防ぐ */
+  .footer-nav {
+    display: flex !important;
+    flex-direction: column !important; /* 縦に並べる */
+    align-items: center !important;
+    gap: 15px !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+  }
+
+  .footer-nav a {
+    margin: 0 !important;
+    text-align: center;
+  }
+
+  /* コピーライト */
+  .copyright {
+    display: block !important;
+    text-align: center !important;
+    padding: 20px 10px !important;
+    margin-top: 25px !important;
+    font-size: 11px;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+}
