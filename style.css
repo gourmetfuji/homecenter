@@ -106,7 +106,7 @@ main {
 #news,
 #about,
 #tool,
-#cafe,
+#kissa,
 #bgm,
 #hotel,
 #access {
@@ -119,7 +119,7 @@ main {
 #news > *,
 #about > *,
 #tool > *,
-#cafe > *,
+#kissa > *,
 #bgm > *,
 #hotel > *,
 #access > * {
@@ -130,7 +130,7 @@ main {
 #news::before,
 #about::before,
 #tool::before,
-#cafe::before,
+#kissa::before,
 #bgm::before,
 #hotel::before,
 #access::before {
@@ -148,7 +148,7 @@ main {
 #news h2,
 #about h2,
 #tool h2,
-#cafe h2,
+#kissa h2,
 #bgm h2,
 #hotel h2,
 #access h2,
@@ -161,7 +161,7 @@ main {
 /* 各コンテンツのレイアウト */
 .about-content,
 .tool-content,
-.cafe-content,
+.kissa-content,
 .bgm-content,
 .hotel-content {
   display: flex;
@@ -176,7 +176,7 @@ main {
 
 .about-image,
 .tool-image,
-.cafe-image,
+.kissa-image,
 .bgm-image,
 .hotel-image {
   width: 50%;
@@ -185,9 +185,23 @@ main {
   box-sizing: border-box;
 }
 
+.kissa-image-link {
+  display: block;
+}
+
+.kissa-image-link img {
+  display: block;
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.kissa-image-link:hover img {
+  opacity: 0.75;
+}
+
 .about-image img,
 .tool-image img,
-.cafe-image img,
+.kissa-image img,
 .bgm-image img,
 .hotel-image img {
   width: 100%;
@@ -196,7 +210,7 @@ main {
 
 .about-text,
 .tool-text,
-.cafe-text,
+.kissa-text,
 .bgm-text,
 .hotel-text {
   width: 50%;
@@ -208,7 +222,7 @@ main {
 #news h2,
 #about h2,
 #tool h2,
-#cafe h2,
+#kissa h2,
 #bgm h2,
 #hotel h2,
 #access h2 {
@@ -216,6 +230,16 @@ main {
   top: -50px;
   font-size: 30px;
   color: #3f6f82;
+}
+
+#kissa h2 a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+#kissa h2 a:hover {
+  opacity: 0.5;
 }
 
 /* マップの器を写真エリアと同じ「幅50%」にする */
@@ -245,31 +269,37 @@ main {
   box-sizing: border-box;
 }
 
-/* 住所などの行間を少し調整 */
-.access-text p {
-  margin-bottom: 8px;
+/* 住所・アクセス・営業時間・TELの間隔 */
+.info-group {
+  margin-bottom: 28px;
 }
 
-/* ★全角スペースの代わりに、CSSで「上の余白（空白行）」を作る */
+/* 最後のTELの下には余白を作らない */
+.info-group:last-child {
+  margin-bottom: 0;
+}
+
+/* pのデフォルト余白をリセット */
+.info-group p {
+  margin: 0;
+}
+
+/* カテゴリ名と内容の間 */
+.info-group .label {
+  margin-bottom: 6px;
+}
+
+/* 営業時間の曜日一覧 */
 .info-list {
-  margin-top: 30px;
-}
-
-/* 営業時間・定休日・TELの1行ごとの設定 */
-.info-row {
   display: flex;
-  margin-bottom: 8px;
+  flex-direction: column;
+  gap: 4px;
 }
 
-/* 左側の「営業時間」「定休日」などのラベル幅を固定する */
-.info-row .label {
-  width: 90px;
-  flex-shrink: 0;
-}
-
-/* 右側の値の設定 */
-.info-row .value {
-  flex-grow: 1;
+.info-row {
+  display: grid;
+  grid-template-columns: 150px auto;
+  column-gap: 20px;
 }
 
 /* フッター（ネストを解消して安全に書き直しました） */
@@ -382,7 +412,7 @@ main {
   #news,
   #about,
   #tool,
-  #cafe,
+  #kissa,
   #bgm,
   #hotel,
   #access {
@@ -395,7 +425,7 @@ main {
   #news::before,
   #about::before,
   #tool::before,
-  #cafe::before,
+  #kissa::before,
   #bgm::before,
   #hotel::before,
   #access::before {
@@ -406,7 +436,7 @@ main {
   /* 各セクションのコンテンツ（写真と文字）を縦並びに */
   .about-content,
   .tool-content,
-  .cafe-content,
+  .kissa-content,
   .bgm-content,
   .hotel-content,
   .access-content {
@@ -422,8 +452,8 @@ main {
   .about-text,
   .tool-image,
   .tool-text,
-  .cafe-image,
-  .cafe-text,
+  .kissa-image,
+  .kissa-text,
   .bgm-image,
   .bgm-text,
   .hotel-image,
