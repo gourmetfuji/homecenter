@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+/* kissa.html 専用。ヘッダー・フッターは style.css を使用 */
+
+.kissa-main {
+  width: 100%;
+  position: relative;
+}
+
+.menu-switch {
+  position: fixed;
+  top: 120px;
+  left: 5%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.menu-switch a {
+  display: inline-block;
+  width: fit-content;
+  padding: 2px 5px;
+  transition: opacity 0.2s ease;
+}
+
+.menu-switch a:hover {
+  opacity: 0.5;
+}
+
+.menu-switch a.active {
+  border-bottom: 1px solid #222;
+}
+
+.menu-page {
+  width: 70%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 0 150px;
+  scroll-margin-top: 80px;
+}
+
+.menu-page h1 {
+  margin: 0 0 90px;
+  font-size: 22px;
+  font-weight: normal;
+  letter-spacing: 0.08em;
+}
+
+.menu-section {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  column-gap: 55px;
+  margin-bottom: 85px;
+}
+
+.section-name {
+  padding-top: 2px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.section-content {
+  min-width: 0;
+}
+
+.menu-category {
+  margin-bottom: 42px;
+}
+
+.menu-category:last-child {
+  margin-bottom: 0;
+}
+
+.menu-category h2 {
+  margin: 0 0 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 0.18em;
+}
+
+.menu-list {
+  width: 100%;
+}
+
+.menu-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 35px;
+  align-items: baseline;
+  margin-bottom: 5px;
+}
+
+.menu-row span:first-child {
+  min-width: 0;
+}
+
+.menu-row span:last-child {
+  white-space: nowrap;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.menu-note {
+  margin: 8px 0 0;
+  font-size: 12px;
+}
+
+.night-page {
+  border-top: 1px solid #ddd;
+  padding-top: 110px;
+}
+
+.night-page h1 {
+  margin-bottom: 90px;
+}
+
+@media screen and (max-width: 600px) {
+  .menu-switch {
+    position: sticky;
+    top: 0;
+    left: auto;
+    width: 100%;
+    padding: 12px 6%;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #eee;
+    flex-direction: row;
+    gap: 18px;
+    z-index: 20;
+  }
+
+  .menu-page {
+    width: 88%;
+    padding: 55px 0 90px;
+    scroll-margin-top: 65px;
+  }
+
+  .menu-page h1 {
+    margin-bottom: 65px;
+    font-size: 19px;
+  }
+
+  .menu-section {
+    display: block;
+    margin-bottom: 65px;
+  }
+
+  .section-name {
+    margin-bottom: 25px;
+    font-size: 13px;
+  }
+
+  .menu-category {
+    margin-bottom: 34px;
+  }
+
+  .menu-category h2 {
+    margin-bottom: 12px;
+    font-size: 11px;
+  }
+
+  .menu-row {
+    column-gap: 18px;
+    margin-bottom: 5px;
+  }
+
+  .menu-row span:last-child {
+    font-size: 12px;
+  }
+
+  .menu-note {
+    font-size: 11px;
+  }
+
+  .night-page {
+    padding-top: 75px;
+  }
+
+  .night-page h1 {
+    margin-bottom: 65px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .menu-page {
+    width: 90%;
+  }
+
+  .menu-switch {
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 13px;
+    font-size: 12px;
+  }
+
+  .menu-row {
+    column-gap: 10px;
+  }
+}
