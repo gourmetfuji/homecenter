@@ -106,8 +106,8 @@ main {
 #news,
 #about,
 #tool,
-#kissa,
-#bgm,
+#cafe,
+#activity,
 #hotel,
 #access {
   position: relative;
@@ -119,8 +119,8 @@ main {
 #news > *,
 #about > *,
 #tool > *,
-#kissa > *,
-#bgm > *,
+#cafe > *,
+#activity > *,
 #hotel > *,
 #access > * {
   position: relative;
@@ -130,8 +130,8 @@ main {
 #news::before,
 #about::before,
 #tool::before,
-#kissa::before,
-#bgm::before,
+#cafe::before,
+#activity::before,
 #hotel::before,
 #access::before {
   content: "";
@@ -148,8 +148,8 @@ main {
 #news h2,
 #about h2,
 #tool h2,
-#kissa h2,
-#bgm h2,
+#cafe h2,
+#activity h2,
 #hotel h2,
 #access h2,
 .connected-nav a {
@@ -161,8 +161,8 @@ main {
 /* 各コンテンツのレイアウト */
 .about-content,
 .tool-content,
-.kissa-content,
-.bgm-content,
+.cafe-content,
+.activity-content,
 .hotel-content {
   display: flex;
   align-items: center;
@@ -170,14 +170,14 @@ main {
 }
 
 .tool-content,
-.bgm-content {
+.activity-content {
   flex-direction: row-reverse;
 }
 
 .about-image,
 .tool-image,
-.kissa-image,
-.bgm-image,
+.cafe-image,
+.activity-image,
 .hotel-image {
   width: 50%;
   overflow: hidden;
@@ -185,24 +185,36 @@ main {
   box-sizing: border-box;
 }
 
-.kissa-image-link {
+.about-image-link,
+.tool-image-link,
+.cafe-image-link,
+.activity-image-link,
+.hotel-image-link {
   display: block;
 }
 
-.kissa-image-link img {
+.about-image-link img,
+.tool-image-link img,
+.cafe-image-link img,
+.activity-image-link img,
+.hotel-image-link img {
   display: block;
   width: 100%;
   transition: opacity 0.3s ease;
 }
 
-.kissa-image-link:hover img {
+.about-image-link:hover img,
+.tool-image-link:hover img,
+.cafe-image-link:hover img,
+.activity-image-link:hover img,
+.hotel-image-link:hover img {
   opacity: 0.75;
 }
 
 .about-image img,
 .tool-image img,
-.kissa-image img,
-.bgm-image img,
+.cafe-image img,
+.activity-image img,
 .hotel-image img {
   width: 100%;
   display: block;
@@ -210,8 +222,8 @@ main {
 
 .about-text,
 .tool-text,
-.kissa-text,
-.bgm-text,
+.cafe-text,
+.activity-text,
 .hotel-text {
   width: 50%;
   line-height: 2;
@@ -222,8 +234,8 @@ main {
 #news h2,
 #about h2,
 #tool h2,
-#kissa h2,
-#bgm h2,
+#cafe h2,
+#activity h2,
 #hotel h2,
 #access h2 {
   position: absolute;
@@ -232,13 +244,25 @@ main {
   color: #3f6f82;
 }
 
-#kissa h2 a {
+#news h2 a,
+#about h2 a,
+#tool h2 a,
+#cafe h2 a,
+#activity h2 a,
+#hotel h2 a,
+#access h2 a {
   color: inherit;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
 
-#kissa h2 a:hover {
+#news h2 a:hover,
+#about h2 a:hover,
+#tool h2 a:hover,
+#cafe h2 a:hover,
+#activity h2 a:hover,
+#hotel h2 a:hover,
+#access h2 a:hover {
   opacity: 0.5;
 }
 
@@ -412,8 +436,8 @@ main {
   #news,
   #about,
   #tool,
-  #kissa,
-  #bgm,
+  #cafe,
+  #activity,
   #hotel,
   #access {
     padding: 40px 15px !important;
@@ -425,8 +449,8 @@ main {
   #news::before,
   #about::before,
   #tool::before,
-  #kissa::before,
-  #bgm::before,
+  #cafe::before,
+  #activity::before,
   #hotel::before,
   #access::before {
     clip-path: none !important; /* スマホでは六角形背景などを解除して四角にする */
@@ -436,8 +460,8 @@ main {
   /* 各セクションのコンテンツ（写真と文字）を縦並びに */
   .about-content,
   .tool-content,
-  .kissa-content,
-  .bgm-content,
+  .cafe-content,
+  .activity-content,
   .hotel-content,
   .access-content {
     flex-direction: column !important;
@@ -452,10 +476,10 @@ main {
   .about-text,
   .tool-image,
   .tool-text,
-  .kissa-image,
-  .kissa-text,
-  .bgm-image,
-  .bgm-text,
+  .cafe-image,
+  .cafe-text,
+  .activity-image,
+  .activity-text,
   .hotel-image,
   .hotel-text,
   #map,
