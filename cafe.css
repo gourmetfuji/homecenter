@@ -164,6 +164,7 @@
   .menu-category h2 {
     margin-bottom: 12px;
     font-size: 11px;
+    color: #3f6f82;
   }
 
   .menu-row {
@@ -203,4 +204,51 @@
   .menu-row {
     column-gap: 10px;
   }
+
+  .morning-page {
+    padding: 30px 0;
+  }
+  .morning-page h1 {
+    margin-bottom: 20px;
+  }
+}
+
+/* 朝限定セクション固有の余白調整 */
+.morning-page {
+  padding-top: 40px; /* 上の余白を小さく */
+  padding-bottom: 40px; /* 下の余白を小さく */
+}
+
+.morning-page h1 {
+  margin-bottom: 30px; /* 見出し下の余白を縮小（元は90px） */
+}
+
+.morning-page .menu-section {
+  margin-bottom: 0; /* セクション下の余白をリセット */
+}
+
+/* 昼メニュー全体の底余白を縮小 */
+#cafe-menu {
+  padding-bottom: 40px; /* 元は 150px */
+}
+
+/* 朝限定セクションの上下余白を縮小 */
+.morning-page {
+  padding-top: 20px; /* 元は 80px */
+  padding-bottom: 40px; /* 元は 150px */
+}
+
+/* 朝限定のタイトル下の空きも詰める */
+.morning-page h1 {
+  margin-bottom: 30px; /* 元は 90px */
+}
+
+.morning-page .menu-section {
+  margin-bottom: 0; /* 下余白のリセット */
+}
+
+/* 夜限定の上の線を消す */
+.night-page {
+  border-top: none;
+  padding-top: 40px; /* 線を消した分、上の余白も好みに合わせて調整（元は110px） */
 }
