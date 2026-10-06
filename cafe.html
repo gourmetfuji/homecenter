@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>喫茶｜ホームセンターふじや</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,34 +32,31 @@
         <a href="index.html#about"><span>概要</span></a>
         <a href="index.html#tool"><span>道具</span></a>
         <a href="index.html#cafe"><span>喫茶</span></a>
-        <a href="index.html#activity"><span>遊び</span></a>
         <a href="index.html#hotel"><span>宿泊</span></a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <div class="menu-switch">
-      <a href="#drink-menu" class="active">お飲み物</a>
-      <a href="#desert-menu" class="active">おやつ</a>
-      <a href="#food-menu" class="active">軽食</a>
-      <a href="#morning-menu" class="active">朝</a>
-      <a href="#night-menu">夜</a>
-    </div>
+  <!-- スイッチメニュー（headerの外に配置することで sticky 固定を正常化） -->
+  <div class="menu-switch">
+    <a href="#drink-menu" class="active">お飲み物</a>
+    <a href="#desert-menu" class="active">おやつ</a>
+    <a href="#food-menu" class="active">軽食</a>
+    <a href="#morning-menu" class="active">朝</a>
+    <a href="#night-menu" class="active">夜</a>
+  </div>
 
+  <main class="cafe-main">
     <!-- 喫茶 MENU -->
     <section class="menu-page" id="cafe-menu">
-      <h1>MENU</h1>
+      <h1>喫茶メニュー</h1>
 
       <!-- お飲み物 -->
       <section class="menu-page drink-page" id="drink-menu">
-        <h1>-お飲み物-</h1>
         <div class="menu-section">
-          <div class="section-name"></div>
+          <div class="section-name">温かいお飲み物</div>
           <div class="section-content">
-
             <div class="menu-category">
-              <h2>温かいお飲み物</h2>
               <div class="menu-list">
                 <div class="menu-row"><span>コーヒー</span><span>¥490</span></div>
                 <div class="menu-row"><span>カフェ・オーレ</span><span>¥590</span></div>
@@ -69,9 +67,15 @@
                 <div class="menu-row"><span>ウーロン茶</span><span>¥490</span></div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="menu-page drink-page">
+        <div class="menu-section">
+          <div class="section-name">冷たいお飲み物</div>
+          <div class="section-content">
             <div class="menu-category">
-              <h2>冷たいお飲み物</h2>
               <div class="menu-list">
                 <div class="menu-row"><span>アイス・コーヒー</span><span>¥490</span></div>
                 <div class="menu-row"><span>アイス・カフェ・オーレ</span><span>¥590</span></div>
@@ -88,43 +92,73 @@
                 <div class="menu-row"><span>アイスクリームトッピング</span><span>＋¥150</span></div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="menu-page drink-page">
+        <div class="menu-section">
+          <div class="section-name">麦酒（小瓶）</div>
+          <div class="section-content">
             <div class="menu-category">
-              <h2>麦酒（小瓶）</h2>
               <div class="menu-list">
                 <div class="menu-row"><span>ハートランドビール</span><span>¥540</span></div>
                 <div class="menu-row"><span>サッポロラガー赤星</span><span>¥590</span></div>
                 <div class="menu-row"><span>アサヒスーパードライ</span><span>¥590</span></div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="menu-page drink-page">
+        <div class="menu-section">
+          <div class="section-name">ウヰスキー</div>
+          <div class="section-content">
             <div class="menu-category">
-              <h2>ウイスキー</h2>
               <div class="menu-list">
                 <div class="menu-row"><span>サントリー角</span><span>¥540</span></div>
                 <div class="menu-row"><span>メーカーズマーク</span><span>¥690</span></div>
                 <div class="menu-row"><span>ボウモア12年</span><span>¥840</span></div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="menu-page drink-page">
+        <div class="menu-section">
+          <div class="section-name">葡萄酒（グラス・フルボディ・辛口）</div>
+          <div class="section-content">
             <div class="menu-category">
-              <h2>葡萄酒（グラス・フルボディ・辛口）</h2>
               <div class="menu-list">
                 <div class="menu-row"><span>赤</span><span>¥590</span></div>
                 <div class="menu-row"><span>白</span><span>¥590</span></div>
                 <div class="menu-row"><span>スパークリング</span><span>¥640</span></div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="menu-page drink-page">
+        <div class="menu-section">
+          <div class="section-name">日本酒（グラス）</div>
+          <div class="section-content">
             <div class="menu-category">
-              <h2>日本酒（グラス）</h2>
               <div class="menu-list">
                 <div class="menu-row"><span>文佳人（高知）</span><span>¥690</span></div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="menu-page drink-page">
+        <div class="menu-section">
+          <div class="section-name">梅酒・焼酎</div>
+          <div class="section-content">
             <div class="menu-category">
-              <h2>梅酒・焼酎</h2>
               <div class="menu-list">
                 <div class="menu-row"><span>梅酒</span><span>¥690</span></div>
                 <div class="menu-row"><span>佐藤 黒（芋）</span><span>¥790</span></div>
@@ -132,10 +166,15 @@
                 <div class="menu-row"><span>ダバダ火振（栗）</span><span>¥690</span></div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-
+      <section class="menu-page drink-page">
+        <div class="menu-section">
+          <div class="section-name">カクテル</div>
+          <div class="section-content">
             <div class="menu-category">
-              <h2>カクテル</h2>
               <div class="menu-list">
                 <div class="menu-row"><span>レモンサワー</span><span>¥540</span></div>
                 <div class="menu-row"><span>ジン・トニック</span><span>¥590</span></div>
@@ -145,24 +184,27 @@
                 <div class="menu-row"><span>自家焙煎カルア・ミルク</span><span>¥790</span></div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="menu-page drink-page">
+        <div class="menu-section">
+          <div class="section-name">ノンアルコール</div>
+          <div class="section-content">
             <div class="menu-category">
-              <h2>ノンアルコール
-              </h2>
               <div class="menu-list">
                 <div class="menu-row"><span>ノンアルコールビール</span><span>¥540</span></div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
       <!-- おやつ -->
       <section class="menu-page desert-page" id="desert-menu">
-        <h1>-おやつ-</h1>
         <div class="menu-section">
-          <div class="section-name"></div>
+          <div class="section-name">おやつ</div>
           <div class="section-content">
             <div class="menu-category">
               <div class="menu-list">
@@ -179,9 +221,8 @@
 
       <!-- 軽食 -->
       <section class="menu-page food-page" id="food-menu">
-        <h1>-軽食-</h1>
         <div class="menu-section">
-          <div class="section-name"></div>
+          <div class="section-name">軽食</div>
           <div class="section-content">
             <div class="menu-category">
               <div class="menu-list">
@@ -202,21 +243,21 @@
       </section>
 
       <section class="menu-page morning-page" id="morning-menu">
-        <h1>朝のメニュー（-10:00）</h1>
         <div class="menu-section">
-          <div class="section-name">-セット-</div>
+          <div class="section-name">朝のセット（-10:00）</div>
           <div class="section-content">
             <div class="menu-category">
               <div class="menu-list">
                 <div class="menu-row"><span>モーニング</span><span>¥740</span></div>
-                <p>・バタートースト</p>
-                <p>・ゆでたまご</p>
-                <p>・ドリンク</p>
-                <div class="menu-row"><span>シーサイド・モーニング</span><span>¥1,290</span></div>
-                <p>・ミックスサンド</p>
-                <p>・ミニニース風サラダ</p>
-                <p>・オニオン・グラタン・スープ</p>
-                <p>・ドリンク</p>
+                <div class="menu-row"><span> ・バタートースト</span><span></span></div>
+                <div class="menu-row"><span> ・ゆでたまご</span><span></span></div>
+                <div class="menu-row"><span> ・ドリンク</span><span></span></div>
+                <br>
+                <div class="menu-row"><span>シーサイド・モーニング</span><span>¥1,390</span></div>
+                <div class="menu-row"><span> ・ミックスサンド</span><span></span></div>
+                <div class="menu-row"><span> ・ミニサラダ（ニース風）</span><span></span></div>
+                <div class="menu-row"><span> ・オニオングラタンスープ</span><span></span></div>
+                <div class="menu-row"><span> ・ドリンク</span><span></span></div>
               </div>
             </div>
           </div>
@@ -224,9 +265,8 @@
       </section>
 
       <section class="menu-page night-page" id="night-menu">
-        <h1>夜のメニュー（17:00-）</h1>
         <div class="menu-section">
-          <div class="section-name">-小皿料理-</div>
+          <div class="section-name">夜の小皿（17:00-）</div>
           <div class="section-content">
             <div class="menu-category">
               <div class="menu-list">
@@ -251,8 +291,42 @@
             </div>
           </div>
         </div>
-
-        <p>※仕入れ状況により、日によって金額の変動、追加やお休みするメニューがございます。金額などは参考にご覧ください。</p>
       </section>
 
+      <h3>※仕入れ状況により、日によって金額の変動、追加やお休みするメニューがございます。金額などは参考にご覧ください。</h3>
+    </section>
   </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <div class="footer-logo">
+        <a href="index.html"><img src="img/logo.png" alt="ホームセンターふじや"></a>
+        <p>香川県高松市庵治町4428番地1</p>
+        <p>TEL:050-1234-5678</p>
+      </div>
+
+      <div class="icon-nav">
+        <div class="icon">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+
+        <div class="footer-nav connected-nav">
+          <a href="#about"><span>概要</span></a>
+          <a href="#tool"><span>道具</span></a>
+          <a href="#cafe"><span>喫茶</span></a>
+          <a href="#hotel"><span>宿泊</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p id="copyright">&copy;2027 ホームセンターふじや｜All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/js/splide.min.js"></script>
+
+</body>
+
+</html>
