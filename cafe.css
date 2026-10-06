@@ -2,11 +2,20 @@
 
 /* cafe.html 専用。ヘッダー・フッターは style.css を使用 */
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 .cafe-main {
   width: 100%;
   position: relative;
+  overflow: visible;
 }
 
+/* ------------------------------------------
+   💻 PC版 デフォルトスタイル（画面左側に縦並び固定）
+------------------------------------------ */
 .menu-switch {
   position: fixed;
   top: 120px;
@@ -22,9 +31,13 @@
 
 .menu-switch a {
   display: inline-block;
-  width: fit-content;
-  padding: 2px 5px;
+  width: 70px;
+  text-align: center;
+  padding: 10px 5px;
+  box-sizing: border-box;
   transition: opacity 0.2s ease;
+  text-decoration: none;
+  color: #333;
 }
 
 .menu-switch a:hover {
@@ -39,12 +52,11 @@
   width: 70%;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 80px 0 150px;
   scroll-margin-top: 80px;
 }
 
 .menu-page h1 {
-  margin: 0 0 90px;
+  margin: 80px 0 80px;
   font-size: 22px;
   font-weight: normal;
   letter-spacing: 0.08em;
@@ -58,9 +70,12 @@
 }
 
 .section-name {
+  margin-bottom: 30px;
   padding-top: 2px;
-  font-size: 14px;
-  letter-spacing: 0.08em;
+  font-size: 13px;
+  font-weight: normal;
+  letter-spacing: 0.25em;
+  color: brown;
   white-space: nowrap;
 }
 
@@ -69,19 +84,11 @@
 }
 
 .menu-category {
-  margin-bottom: 42px;
+  padding: 35px 0 0 0px;
 }
 
 .menu-category:last-child {
   margin-bottom: 0;
-}
-
-.menu-category h2 {
-  margin: 10px 0 14px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: normal;
-  letter-spacing: 0.18em;
 }
 
 .menu-list {
@@ -93,7 +100,7 @@
   grid-template-columns: minmax(0, 1fr) auto;
   column-gap: 35px;
   align-items: baseline;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .menu-row span:first-child {
@@ -112,64 +119,76 @@
   font-size: 12px;
 }
 
-.night-page {
-  border-top: 1px solid #ddd;
-  padding-top: 110px;
+h3 {
+  font-size: 11px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
 }
 
-.night-page h1 {
-  margin-bottom: 90px;
-}
-
+/* ------------------------------------------
+   📱 スマートフォン表示（画面上部に横並び sticky 固定）
+------------------------------------------ */
 @media screen and (max-width: 600px) {
+  header {
+    position: relative;
+    width: 100%;
+    z-index: 100;
+    background: #fff;
+  }
+
   .menu-switch {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    left: auto;
+    left: 0;
     width: 100%;
-    padding: 12px 6%;
+    z-index: 900;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
     background: rgba(255, 255, 255, 0.96);
     border-bottom: 1px solid #eee;
-    flex-direction: row;
-    gap: 18px;
-    z-index: 20;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  .menu-switch a {
+    width: auto;
+    flex: 1;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 13px;
   }
 
   .menu-page {
     width: 88%;
-    padding: 55px 0 90px;
-    scroll-margin-top: 65px;
+    scroll-margin-top: 50px;
   }
 
   .menu-page h1 {
-    margin-bottom: 65px;
     font-size: 19px;
+    margin-top: 30px;
   }
 
   .menu-section {
     display: block;
-    margin-bottom: 65px;
+    margin-bottom: 50px; /* セクション同士の余白も少し調整 */
   }
 
   .section-name {
-    margin-bottom: 25px;
+    margin-bottom: 10px; /* ← スマホ時の下余白を短縮 */
     font-size: 13px;
   }
 
   .menu-category {
-    margin-bottom: 34px;
-    padding-left: 15px;
-  }
-
-  .menu-category h2 {
-    margin-bottom: 12px;
-    font-size: 11px;
-    color: #3f6f82;
+    padding-top: 10px; /* ← 上付けの余白をカット */
+    padding-left: 0;
   }
 
   .menu-row {
     column-gap: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 
   .menu-row span:last-child {
@@ -179,14 +198,6 @@
   .menu-note {
     font-size: 11px;
   }
-
-  .night-page {
-    padding-top: 75px;
-  }
-
-  .night-page h1 {
-    margin-bottom: 65px;
-  }
 }
 
 @media screen and (max-width: 380px) {
@@ -194,61 +205,11 @@
     width: 90%;
   }
 
-  .menu-switch {
-    padding-left: 5%;
-    padding-right: 5%;
-    gap: 13px;
+  .menu-switch a {
     font-size: 12px;
   }
 
   .menu-row {
     column-gap: 10px;
   }
-
-  .morning-page {
-    padding: 30px 0;
-  }
-  .morning-page h1 {
-    margin-bottom: 20px;
-  }
-}
-
-/* 朝限定セクション固有の余白調整 */
-.morning-page {
-  padding-top: 40px; /* 上の余白を小さく */
-  padding-bottom: 40px; /* 下の余白を小さく */
-}
-
-.morning-page h1 {
-  margin-bottom: 30px; /* 見出し下の余白を縮小（元は90px） */
-}
-
-.morning-page .menu-section {
-  margin-bottom: 0; /* セクション下の余白をリセット */
-}
-
-/* 昼メニュー全体の底余白を縮小 */
-#cafe-menu {
-  padding-bottom: 40px; /* 元は 150px */
-}
-
-/* 朝限定セクションの上下余白を縮小 */
-.morning-page {
-  padding-top: 20px; /* 元は 80px */
-  padding-bottom: 40px; /* 元は 150px */
-}
-
-/* 朝限定のタイトル下の空きも詰める */
-.morning-page h1 {
-  margin-bottom: 30px; /* 元は 90px */
-}
-
-.morning-page .menu-section {
-  margin-bottom: 0; /* 下余白のリセット */
-}
-
-/* 夜限定の上の線を消す */
-.night-page {
-  border-top: none;
-  padding-top: 40px; /* 線を消した分、上の余白も好みに合わせて調整（元は110px） */
 }
